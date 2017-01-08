@@ -1,6 +1,6 @@
 /**
- * @file 入口JS，一个目录下同名的HTML,JS会被自动关联
- * @author jiaojian04
+ * @file 入口JS
+ * @author MarxJiao
  */
 
 // LIB
