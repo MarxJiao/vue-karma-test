@@ -1,0 +1,39 @@
+{
+  "name": "vue-karma-test",
+  "version": "1.0.0",
+  "description": "karma+webpack搭建的vue单元测试环境",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "karma start",
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarxJiao/vue-karma-test.git"
+  },
+  "keywords": [
+    "karma",
+    "vuetest",
+    "unit"
+  ],
+  "author": "MarxJiao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarxJiao/vue-karma-test/issues"
+  },
+  "homepage": "https://github.com/MarxJiao/vue-karma-test#readme",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "css-loader": "^0.26.1",
+    "html-webpack-plugin": "^2.26.0",
+    "vue-loader": "^10.0.2",
+    "vue-template-compiler": "^2.1.8",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "vue": "^2.1.8"
+  }
+}
