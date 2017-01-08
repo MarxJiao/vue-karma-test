@@ -85,8 +85,16 @@ module.exports = function(config) {
                 ]
             },
             vue: {
-                loaders: {
-                    js: 'babel-loader'
+              loaders: {
+                js: 'isparta-loader'
+              }
+            },
+            isparta: {
+                embedSource: true,
+                noAutoWrap: true,
+                // these babel options will be passed only to isparta and not to babel-loader
+                babel: {
+                    presets: ['es2015']
                 }
             },
             babel: {
