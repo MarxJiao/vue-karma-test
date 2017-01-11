@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>{{title}}</h1>
+        <h1>{{title | upperCase}}</h1>
         <vc-message :message="message"></vc-message>
     </div>
 </template>
@@ -23,6 +23,11 @@
         methods: {
             setMessage(msg) {
                 this.message = msg;
+            }
+        },
+        filters: {
+            upperCase(str) {
+                return str.toUpperCase();
             }
         }
     }
