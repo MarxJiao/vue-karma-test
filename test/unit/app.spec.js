@@ -48,11 +48,11 @@ describe('test app.vue', () => {
     it('数据更新后，视图应该改变', done => {
 
         // 这里将app生成vue实例，并使用 $mount() 模拟挂载状态
-        let vm = new Vue(app).$mount();
+        let Cor = Vue.extend(app);
+        let vm = new Cor().$mount();
 
         // 挂载后改变title
         vm.title = 'APP';
-
         Vue.nextTick(() => {
             let title = vm.$el.getElementsByTagName('h1')[0]
             expect(title.textContent).toEqual('APP')
