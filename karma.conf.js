@@ -36,7 +36,7 @@ module.exports = function(config) {
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'coverage'],
+        reporters: ['progress', 'coverage-istanbul'],
 
 
         // web server port
@@ -71,6 +71,7 @@ module.exports = function(config) {
 
         // webpack配置
         webpack: {
+            entry: './src/index.js',
             module: {
                 loaders: [
                     {
@@ -80,30 +81,22 @@ module.exports = function(config) {
                     },
                     {
                         test: /\.vue$/,
-                        loader: 'vue-loader'
+                        loader: 'vue-loader',
+                        options: {
+                            loaders: {
+                                js: 'babel-loader'
+                            },
+                            postLoaders: {
+                                js: 'istanbul-instrumenter-loader?esModules=true'
+                            }
+                        }
                     }
                 ]
-            },
-            vue: {
-              loaders: {
-                js: 'isparta-loader'
-              }
-            },
-            isparta: {
-                embedSource: true,
-                noAutoWrap: true,
-                // these babel options will be passed only to isparta and not to babel-loader
-                babel: {
-                    presets: ['es2015']
-                }
-            },
-            babel: {
-                presets: ['es2015']
-            },
+            }
         },
-        coverageReporter: {
-            type : 'html',
-            dir : 'coverage/'
+        coverageIstanbulReporter: {
+            reports: [ 'text-summary', 'html' ],
+            fixWebpackSourcePaths: true
         }
     })
 }

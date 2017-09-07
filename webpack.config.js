@@ -1,9 +1,10 @@
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 module.exports = {
      entry: './src/index.js',
      output: {
-         path: './dist',
+         path: path.resolve(__dirname, "dist"),
          filename: 'app.bundle.js'
      },
      module: {
@@ -16,17 +17,14 @@ module.exports = {
             },
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                options: {
+                    loaders: {
+                        js: 'babel-loader'
+                    }
+                }
             }
         ]
-    },
-    vue: {
-        loaders: {
-            js: 'babel-loader'
-        }
-    },
-    babel: {
-        presets: ['es2015']
     },
     plugins: [
 
